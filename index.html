@@ -13,7 +13,7 @@
 	
     <script src="Build/UnityLoader.js"></script>
     <script>
-      UnityLoader.instantiate("unityContainer", "Build/WEBGL.json");
+     var unityInstance = UnityLoader.instantiate("unityContainer", "Build/WEBGL.json");
     </script>
   </head>
   <body>	
@@ -23,7 +23,6 @@
     <!-- Neat Google button gets styled automatically when Google platform SDK is loaded -->
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <script>
-		var unityInstance = UnityLoader.instantiate("unityContainer", "Build/WEBGL.json", {onProgress: UnityProgress});
         // Invoked when user has signed in with Google
         function onSignIn() {
             // Retrieve access token
