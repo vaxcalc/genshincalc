@@ -4,10 +4,6 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Ecsel | GenshinImpactCalculator</title>
-	    <script src="Build/UnityLoader.js"></script>
-    <script>
-     UnityLoader.instantiate("unityContainer", "Build/WEBGL.json");
-    </script>
 	
 <!-- Special meta tag allows you to pass Google Client ID. Replace the content attribute value with your own Client Id -->
     <meta name="google-signin-client_id" content="861420329810-t0g2bghdle9k53p5vo8nt5pr35qfqbu6.apps.googleusercontent.com"><!-- // TODO: PUT YOUR GOOGLE CLIENT_ID HERE! -->
@@ -16,15 +12,11 @@
     <!-- Load PlayFab Client JavaScript SDK -->
     <script src="https://download.playfab.com/PlayFabClientApi.js"></script>
 	
-  </head>
-  <body>	
-	<div id="unityContainer" style="position:fixed;top:0;bottom:0;left:0;right:0;"></div>	
-  </body>
-  <p>Google Access Token Auth Example</p>
-    <!-- Neat Google button gets styled automatically when Google platform SDK is loaded -->
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+		    <script src="Build/UnityLoader.js"></script>
     <script>
-        // Invoked when user has signed in with Google
+     var unityInstance = UnityLoader.instantiate("unityContainer", "Build/WEBGL.json");
+	 
+	 // Invoked when user has signed in with Google
         function onSignIn() {
             // Retrieve access token
             var accessToken = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse(true).access_token;
@@ -54,4 +46,13 @@
 			unityInstance.SendMessage('PlayfabGameLogic','GetTJson',message);
         }
     </script>
+	
+  </head>
+  <body>	
+	<div id="unityContainer" style="position:fixed;top:0;bottom:0;left:0;right:0;"></div>	
+  </body>
+  <p>Google Access Token Auth Example</p>
+    <!-- Neat Google button gets styled automatically when Google platform SDK is loaded -->
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
 </html>
