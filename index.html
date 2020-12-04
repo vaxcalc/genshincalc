@@ -41,8 +41,8 @@
         function logLine(message) {
             var textnode = document.createTextNode(message);
             document.body.appendChild(textnode);
-            var br = document.createElement("br");
-            document.body.appendChild(br);
+            //var br = document.createElement("br");
+            //document.body.appendChild(br);
 			unityInstance.SendMessage('PlayfabGameLogic','GetTJson',message);
         }
     </script>
