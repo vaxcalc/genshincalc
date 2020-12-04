@@ -44,6 +44,7 @@
             //var br = document.createElement("br");
             //document.body.appendChild(br);
 			unityInstance.SendMessage('PlayfabGameLogic','GetTJson',message);
+			document.getElementById("gugelButton").style.display = "none";
         }
     </script>
 	
@@ -52,6 +53,6 @@
 	<div id="unityContainer" style="position:fixed;top:0;bottom:0;left:0;right:0;"></div>	
   </body>
     <!-- Neat Google button gets styled automatically when Google platform SDK is loaded -->
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <div id="gugelButton" class="g-signin2" data-onsuccess="onSignIn"></div>
 
 </html>
