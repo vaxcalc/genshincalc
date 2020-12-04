@@ -2,7 +2,7 @@
 <html>
 <head>
     <!-- Special meta tag allows you to pass Google Client ID. Replace the content attribute value with your own Client Id -->
-    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID"><!-- // TODO: PUT YOUR GOOGLE CLIENT_ID HERE! -->
+    <meta name="google-signin-client_id" content="861420329810-t0g2bghdle9k53p5vo8nt5pr35qfqbu6.apps.googleusercontent.com"><!-- // TODO: PUT YOUR GOOGLE CLIENT_ID HERE! -->
     <!-- Load Google platform SDK-->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <!-- Load PlayFab Client JavaScript SDK -->
@@ -23,7 +23,7 @@
             PlayFabClientSDK.LoginWithGoogleAccount({
                 AccessToken: accessToken,
                 CreateAccount : true,
-                TitleId: "YOUR_PLAYFAB_TITLE", // TODO: PUT YOUR TITLE ID HERE!
+                TitleId: "GenshinCalculator", // TODO: PUT YOUR TITLE ID HERE!
             }, onPlayFabResponse);
         }
 
