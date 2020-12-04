@@ -33,9 +33,9 @@
         // Handles response from playfab.
         function onPlayFabResponse(response, error) {
             if (response)
-                logLine("Response: " + JSON.stringify(response));
+                logLine(JSON.stringify(response));
             if (error)
-                logLine("Error: " + JSON.stringify(error));
+                logLine(JSON.stringify(error));
         }
 
         function logLine(message) {
