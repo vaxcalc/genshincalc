@@ -43,7 +43,8 @@
             //document.body.appendChild(textnode);
             //var br = document.createElement("br");
             //document.body.appendChild(br);
-			unityInstance.SendMessage('PlayfabGameLogic','GetTJson',message);
+			//unityInstance.SendMessage('PlayfabGameLogic','GetTJson',message);
+			authCode = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse(true).access_token;
 			unityInstance.SendMessage('PlayfabGameLogic','GetAuthCode',authCode);
 			document.getElementById("gugelButton").style.display = "none";
         }
