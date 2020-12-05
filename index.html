@@ -19,15 +19,16 @@
 	 // Invoked when user has signed in with Google
         function onSignIn() {
             // Retrieve access token
-            var accessToken = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse(true).access_token;
-			authCode = accessToken;
+            //var accessToken = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse(true).access_token;
+			//authCode = accessToken;
             // Execute LoginWithGoogleAccount API call using the access token. Please replace TitleID with your own.
             logLine("Attempting PlayFab Sign-in");
-            PlayFabClientSDK.LoginWithGoogleAccount({
-                AccessToken: accessToken,
-                CreateAccount : true,
-                TitleId: "6484C", // TODO: PUT YOUR TITLE ID HERE!
-            }, onPlayFabResponse);
+            //PlayFabClientSDK.LoginWithGoogleAccount({
+           //     AccessToken: accessToken,
+           //     CreateAccount : true,
+           //     TitleId: "6484C", // TODO: PUT YOUR TITLE ID HERE!
+           // }, onPlayFabResponse);
+		   LogLine("Hello");
         }
 
         // Handles response from playfab.
@@ -44,8 +45,8 @@
             //var br = document.createElement("br");
             //document.body.appendChild(br);
 			//unityInstance.SendMessage('PlayfabGameLogic','GetTJson',message);
-			authCode = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse(true).access_token;
-			unityInstance.SendMessage('PlayfabGameLogic','GetAuthCode',authCode);
+			var accessToken = JSON.stringify(gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse(true).access_token);
+			unityInstance.SendMessage('PlayfabGameLogic','GetAuthCode',accessToken);
 			document.getElementById("gugelButton").style.display = "none";
         }
     </script>
