@@ -20,7 +20,7 @@
         function onSignIn() {
             // Retrieve access token
             var accessToken = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse(true).access_token;
-			unityInstance.SendMessage('PlayfabGameLogic','GetAuthCode',accessToken);
+			unityInstance.SendMessage('PlayfabGameLogic','GetAuthCode',JSON.stringify(accessToken));
             // Execute LoginWithGoogleAccount API call using the access token. Please replace TitleID with your own.
            // logLine("Attempting PlayFab Sign-in");
             //PlayFabClientSDK.LoginWithGoogleAccount({
