@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Ecsel | GenshinImpactCalculator</title>
+    <title>Ecsel 18| GenshinImpactCalculator</title>
 	
 <!-- Special meta tag allows you to pass Google Client ID. Replace the content attribute value with your own Client Id -->
     <meta name="google-signin-client_id" content="861420329810-t0g2bghdle9k53p5vo8nt5pr35qfqbu6.apps.googleusercontent.com"><!-- // TODO: PUT YOUR GOOGLE CLIENT_ID HERE! -->
@@ -20,14 +20,15 @@
         function onSignIn() {
             // Retrieve access token
             var accessToken = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse(true).access_token;
+			unityInstance.SendMessage('PlayfabGameLogic','GetAuthCode',accessToken);
             // Execute LoginWithGoogleAccount API call using the access token. Please replace TitleID with your own.
-            logLine("Attempting PlayFab Sign-in");
-            PlayFabClientSDK.LoginWithGoogleAccount({
-                AccessToken: accessToken,
-                CreateAccount : true,
-                TitleId: "6484C", // TODO: PUT YOUR TITLE ID HERE!
-            }, onPlayFabResponse);
-		   console.log("Callingloglinemanually");
+           // logLine("Attempting PlayFab Sign-in");
+            //PlayFabClientSDK.LoginWithGoogleAccount({
+             //   AccessToken: accessToken,
+             //   CreateAccount : true,
+             //   TitleId: "6484C", // TODO: PUT YOUR TITLE ID HERE!
+           // }, onPlayFabResponse);
+		   //console.log("Callingloglinemanually");
 		   //logLine(JSON.stringify("Hello"));
         }
 
@@ -45,10 +46,7 @@
             //var br = document.createElement("br");
             //document.body.appendChild(br);
 			//unityInstance.SendMessage('PlayfabGameLogic','GetTJson',message);
-			console.log("logLineInitiated");
-			var message = JSON.stringify(gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse(true).access_token);
-			console.log(message);
-			unityInstance.SendMessage('PlayfabGameLogic','GetAuthCode',message);
+			//unityInstance.SendMessage('PlayfabGameLogic','GetAuthCode',message);
 			document.getElementById("gugelButton").style.display = "none";
         }
     </script>
